@@ -23,8 +23,10 @@ app.post('/login', async(req, res) => {
     try {
       const username = req.body.username
       const password = req.body.password
-      const query = `SELECT title FROM user WHERE username = '${username}' AND password = '${password}'`
-      console.log(query)
+      const query = "SELECT title FROM user where username = '" + username + "' and password = '" + password + "'";
+        console.log("username: " + username);
+	    console.log("password: " + password);
+	    console.log('query: ' + query);
   
       db.get(query, function (err, row) {
         if (err) {
